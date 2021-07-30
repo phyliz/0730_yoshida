@@ -7,7 +7,7 @@
       <div class="title">
         <p>ホーム</p>
       </div>
-      <Messaege />
+      <Message />
       <div class="comment">
         <div class="comment-title">
           <p>コメント</p>
@@ -32,6 +32,7 @@
 <script>
 import SideNavi from "../components/SideNavi";
 import Message from "../components/Message";
+
 export default {
   props: ["id"],
   data() {
