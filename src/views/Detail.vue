@@ -33,7 +33,7 @@
 import SideNavi from "../components/SideNavi";
 import Message from "../components/Message";
 export default {
-  propr: ["id"],
+  props: ["id"],
   data() {
     return {
       content: "",
