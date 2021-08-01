@@ -1,15 +1,13 @@
 <template>
   <div>
     <HeaderAuth />
-    <div class="header flex">
     <div class="card">
       <p>ログイン</p>
       <div class="form">
         <input placeholder="メールアドレス" type="email">
         <input placeholder="パスワード" type="password">
-        <button>ログイン</button>
+        <button @click="auth">ログイン</button>
       </div>
-    </div>
     </div>
   </div>
 </template>
@@ -17,31 +15,27 @@
 <script>
 import HeaderAuth from "../components/HeaderAuth";
 export default {
+  data() {
+    return {
+      email: "",
+      password: ""
+    };
+  },
   components: {
     HeaderAuth
+  },
+  methods: {
+    auth () {
+      this.$store.dispatch("login", {
+        email: this.email,
+        password: this.password
+      });
+    }
   }
 };
 </script>
 
 <style scoped>
-.right {
-  align-items: center;
-}
-.right p {
-  margin-right: 20px;
-  cursor: pointer;
-}
-.herder {
-  margin: 20px;
-}
-.logo {
-  width: 150px;
-  cursor: pointer;
-}
-.flex {
-  display: flex;
-  justify-content: space-between;
-}
 button {
   width: 100px;
   text-align: center;
