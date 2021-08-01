@@ -16,6 +16,7 @@
 
 <script>
 import HeaderAuth from "../components/HeaderAuth.vue";
+import axios from "axios";
 export default {
   data() {
     return {

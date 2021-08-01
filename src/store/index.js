@@ -3,12 +3,12 @@ import Vuex from 'vuex'
 import createPersistedState from "vuex-persistedstate"
 import axios from "axios"
 import router from "../router/index"
-import { LogInfoPlugin } from 'enhanced-resolve'
+
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  plugins: [createdPersistedState()],
+  plugins: [createPersistedState()],
   state: {
     auth: "",
     user: "",
@@ -28,7 +28,7 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    async LogInfoPlugin({ commit }, { email, password }) {
+    async Login({ commit }, { email, password }) {
       const responseLogin = await axios.post(
         "https://arcane-stream-03891.herokuapp.com/api/login",
         {
